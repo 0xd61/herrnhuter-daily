@@ -26,14 +26,9 @@ func InitServer(path string) (Server, error) {
 	// Create routes
 	Routes(e)
 
-	verses, err := ImportVerses(path)
+	d, err := loadData(path)
 	if err != nil {
 		return Server{}, err
-	}
-
-	d, err := InitTree(verses)
-	if err != nil {
-		return Server{}, nil
 	}
 
 	return Server{
@@ -43,12 +38,33 @@ func InitServer(path string) (Server, error) {
 }
 
 // Update reloads the server data
-func (s Server) Update(path string) {
+func (s Server) Update(path string) error {
 
+	d, err := loadData(path)
+	if err != nil {
+		return err
+	}
+	s.data = d
+	return nil
 }
 
+// Start starts the listener on the specified port
 func (s Server) Start(port int) {
 	p := strconv.Itoa(port)
 	// Start server
 	s.echo.Logger.Fatal(s.echo.Start(":" + p))
+}
+
+func loadData(path string) (*btree.BTree, error) {
+
+	verses, err := ImportVerses(path)
+	if err != nil {
+		return nil, err
+	}
+
+	d, err := InitTree(verses)
+	if err != nil {
+		return nil, err
+	}
+	return d, nil
 }
