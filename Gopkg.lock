@@ -8,6 +8,12 @@
   version = "v3.2.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/google/btree"
+  packages = ["."]
+  revision = "e89373fe6b4a7413d7acd6da1725b83ef713e6e4"
+
+[[projects]]
   name = "github.com/labstack/echo"
   packages = [
     ".",
@@ -41,6 +47,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/petar/GoLLRB"
+  packages = ["llrb"]
+  revision = "53be0d36a84c2a886ca057d34b6aa4468df9ccb4"
+
+[[projects]]
+  branch = "master"
   name = "github.com/valyala/bytebufferpool"
   packages = ["."]
   revision = "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7"
@@ -69,6 +81,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e005a22fb1ddfe8dd1a841fa1258537aa320f8768f3c0a9ca91cfc2e609d6be2"
+  inputs-digest = "b1f67b5c7f78d0878e48e30acd78537778f46b92395cf9648f3d51c50995fc5a"
   solver-name = "gps-cdcl"
   solver-version = 1
