@@ -1,21 +1,12 @@
 package main
 
-import (
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
-)
-
 func main() {
+
 	// Echo instance
-	e := echo.New()
+	s, err := InitServer("./assets")
+	if err != nil {
+		return
+	}
 
-	// Middleware
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
-
-	// Routes
-	Routes(e)
-
-	// Start server
-	e.Logger.Fatal(e.Start(":1323"))
+	s.Start(3333)
 }
