@@ -1,4 +1,4 @@
-package main
+package verses
 
 import (
 	"encoding/xml"
@@ -44,9 +44,6 @@ func ImportVerses(dirPath string) ([]Verse, error) {
 		err = xml.Unmarshal(bytes, &data)
 		if nil != err {
 			return nil, err
-		}
-		for index, verse := range data.Data {
-			data.Data[index].Day = verse.Date.Weekday()
 		}
 		verses = append(verses, data.Data...)
 	}
