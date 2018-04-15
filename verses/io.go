@@ -45,6 +45,9 @@ func ImportVerses(dirPath string) ([]Verse, error) {
 		if nil != err {
 			return nil, err
 		}
+		for index := range data.Data {
+			data.Data[index].License = "Nutzungsbedingungen: https://www.losungen.de/download/nutzungsbedingungen/ - Quellen: https://www.losungen.de/fileadmin/media-losungen/download/Losungen_Quellenverzeichnis_2018.pdf"
+		}
 		verses = append(verses, data.Data...)
 	}
 	return verses, nil
