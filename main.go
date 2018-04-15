@@ -1,5 +1,11 @@
 package main
 
+import (
+	"strconv"
+)
+
+const port = 3333
+
 func main() {
 
 	// Echo instance
@@ -8,5 +14,5 @@ func main() {
 		return
 	}
 
-	s.Start(3333)
+	s.Logger.Fatal(s.Start(":" + strconv.Itoa(port)))
 }
