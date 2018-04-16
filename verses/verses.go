@@ -90,6 +90,10 @@ func (tree *BTree) GetRange(start, end time.Time) ([]Verse, error) {
 		return true
 	})
 
+	if len(verses) == 0 {
+		return nil, fmt.Errorf("No verses found")
+	}
+
 	return verses, nil
 }
 

@@ -29,6 +29,7 @@ func Today(c echo.Context) error {
 	return c.JSON(http.StatusOK, verse)
 }
 
+// Day returns the verse of a given date
 func Day(c echo.Context) error {
 	var year, month, day int
 	var err error
@@ -57,6 +58,7 @@ func Day(c echo.Context) error {
 	return c.JSON(http.StatusOK, verse)
 }
 
+// Month returns all verses found for a given month in a year
 func Month(c echo.Context) error {
 	year, err := strconv.Atoi(c.Param("yyyy"))
 	if err != nil {
@@ -77,11 +79,12 @@ func Month(c echo.Context) error {
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, struct {
 			Error string `json:"error"`
-		}{Error: "internal error"})
+		}{Error: err.Error()})
 	}
 	return c.JSON(http.StatusOK, data)
 }
 
+// Year returns all verses found for a given year
 func Year(c echo.Context) error {
 	year, err := strconv.Atoi(c.Param("yyyy"))
 	if err != nil {
@@ -95,7 +98,7 @@ func Year(c echo.Context) error {
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, struct {
 			Error string `json:"error"`
-		}{Error: "internal error"})
+		}{Error: err.Error()})
 	}
 	return c.JSON(http.StatusOK, data)
 
