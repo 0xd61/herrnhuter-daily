@@ -47,7 +47,7 @@ func ImportVerses(dirPath string) ([]Verse, error) {
 		}
 		for index := range data.Data {
 			data.Data[index].TermsOfUse = "https://www.losungen.de/download/nutzungsbedingungen/"
-			data.Data[index].ReferenceSource = "https://www.losungen.de/fileadmin/media-losungen/download/Losungen_Quellenverzeichnis_2018.pdf"
+			data.Data[index].Bibliography = "https://www.losungen.de/fileadmin/media-losungen/download/Losungen_Quellenverzeichnis_2018.pdf"
 		}
 		verses = append(verses, data.Data...)
 	}
