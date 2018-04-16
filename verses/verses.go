@@ -76,10 +76,12 @@ func (tree *BTree) GetVerse(date time.Time) (Verse, error) {
 	return vers.(Verse), nil
 }
 
+// GetRange returns an array of verses of a time interval
 func GetRange(start, end time.Time) ([]Verse, error) {
 	return DefaultTree.GetRange(start, end)
 }
 
+// GetRange returns an array of verses of a time interval
 func (tree *BTree) GetRange(start, end time.Time) ([]Verse, error) {
 	verses := make([]Verse, 0)
 	customStart := customTime{start}
