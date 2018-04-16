@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>Losungen | Gottes Wort auf Ihrer Website</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -21,10 +21,9 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#intro">Losungen</a></li>
+							<li><a href="#one">Dokumentation</a></li>
+							<!-- <li><a href="#two">Lizenz</a></li> -->
 						</ul>
 					</nav>
 				</div>
@@ -36,11 +35,10 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+							<h1>Die Losungen</h1>
+							<p>Losungen des Andachtsbuches der <a href="https://losungen.de">Herrnhuter Brüdergemeinde</a> für Ihre Website<br /><br />
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
+								<li><a href="#one" class="button scrolly">Dokumentation</a></li>
 							</ul>
 						</div>
 					</section>
@@ -48,45 +46,95 @@
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<h2>REST-API Dokumentation</h2>
+									<p>Dieses Projekt bietet Losungen als REST-API zur einfachen Einbindung in Websites oder Web Applications an. Die Losungen entsprechen der von der Evangelische Brüder-Unität – Herrnhuter Brüdergemeine ausgewählten Bibelverse und nutzt serverseitig die <a href="https://www.losungen.de/download/">hier</a> angebotenen Losungen im XML Format.</p>
+									<p>Die API dient als universelle Schnittstelle und bietet die Bibelverse im JSON-Format (JavaScript Object Notation) an. <br />
+									Bei jeder Darstellung eines Bibeltextes muss eine Quellenangabe ersitlich sein, welche bei einem Request als Link zurückgegeben wird.</p>
+									<p>Das Projekt ist als Open Source Projekt auf Github öffentlich verfügbar. <br />
+									Wir freuen uns auf Deine Mitarbeit! ;-)</p>
 									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="#" class="button">Learn more</a></li>
+										<li><a href="https://losungen.de" class="button" target="_blank">Losungen.de</a></li>
+										<li><a href="https://github.com/Kaitsh/herrnhuter-daily" target="_blank" class="button">Source Code</a></li>
+										<li><a href="https://www.losungen.de/download/nutzungsbedingungen/" target="_blank" class="button">Nutzungsbedingungen</a></li>
 									</ul>
 								</div>
 							</div>
 						</section>
 					</section>
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>REST-API Routen:</h2>
+							<div class="features">
+								<section>
+									<span class="icon major fa-file-o"></span>
+									<p>Single Response</p>
+									<h4>Request</h4>
+									<p>
+										<code>/api/today</code><br />
+										<code>/api/yyyy/mm/dd</code>
+									</p>
+									<h4>Response</h4>
+									<pre>
+<code>
+{
+	"date": "string",
+	"weekday":"string",
+	"sunday_name":"string",
+	"verse":"string",
+	"reference":"string",
+	"teaching":"string",
+	"teaching_reference": "string",
+	"terms_of_use": "string",
+	"bibliography": "string"
+}
+</code>
+<h4>Error</h4>
+<code>
+{
+	"error": "string"
+}
+</code>
+									</pre>
+								</section>
+								<section>
+									<span class="icon major fa-copy"></span>
+								    <p>Array Response</p>
+									<h4>Request</h4>
+									<p>
+										<code>/api/yyyy</code><br />
+										<code>/api/yyyy/mm</code>
+									</p>
+									<h4>Response</h4>
+									<pre>
+<code>
+{[
+		"date": "string",
+		"weekday":"string",
+		"sunday_name":"string",
+		"verse":"string",
+		"reference":"string",
+		"teaching":"string",
+		"teaching_reference": "string",
+		"terms_of_use": "string",
+		"bibliography": "string"
+]}
+</code>
+<h4>Error</h4>
+<code>
+{
+	"error": "string"
+}
+</code>
+									</pre>
+								</section>
+							</div>
+						</div>
+					</section>
 
 				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+				<!--	<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>What we do</h2>
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
@@ -126,10 +174,10 @@
 								<li><a href="#" class="button">Learn more</a></li>
 							</ul>
 						</div>
-					</section>
+					</section> -->
 
 				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
+				<!--	<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
@@ -183,7 +231,7 @@
 								</section>
 							</div>
 						</div>
-					</section>
+					</section> -->
 
 			</div>
 
@@ -191,7 +239,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Daniel Glinka. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Informationen: <a href="https://www.ebu.de/startseite/">Evangelische Brüder-Unität</a></li>
 					</ul>
 				</div>
 			</footer>
