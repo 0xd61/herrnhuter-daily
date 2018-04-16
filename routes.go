@@ -6,7 +6,7 @@ import (
 
 // Routes are all api routes and their handlers
 func Routes(server *echo.Echo) {
-	server.GET("/", Hello)
+	server.Static("/", "public")
 	server.GET("/:yyyy", Year)
 	server.GET("/:yyyy/:mm", Month)
 	server.GET("/:yyyy/:mm/:dd", Day)
