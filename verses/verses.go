@@ -26,7 +26,7 @@ type customTime struct {
 	time.Time
 }
 
-// BTree wrapps the btree
+// BTree wrapps the btree package
 type BTree struct {
 	*btree.BTree
 }
@@ -34,6 +34,7 @@ type BTree struct {
 // DefaultTree is the default instance of the tree
 var DefaultTree = BTree{btree.New(2)}
 
+// Unmarshalling Time is not supported by default
 func (c *customTime) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	const format = "2006-01-02T15:04:05" // yyyymmdd date format
 	var v string
