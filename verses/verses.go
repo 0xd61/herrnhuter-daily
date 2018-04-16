@@ -10,14 +10,15 @@ import (
 
 // Verse is the representation of a verse
 type Verse struct {
-	Date        customTime `xml:"Datum" json:"date"`
-	Day         string     `xml:"Wtag"  json:"weekday"`
-	Sunday      string     `xml:"Sonntag" json:"sunday_name"`
-	Text        string     `xml:"Losungstext" json:"verse"`
-	Reference   string     `xml:"Losungsvers" json:"reference"`
-	Teaching    string     `xml:"Lehrtext" json:"teaching"`
-	TeachingRef string     `xml:"Lehrtextvers" json:"teaching_reference"`
-	License     string     `xml:"License" json:"license"`
+	Date         customTime `xml:"Datum" json:"date"`
+	Day          string     `xml:"Wtag"  json:"weekday"`
+	Sunday       string     `xml:"Sonntag" json:"sunday_name"`
+	Text         string     `xml:"Losungstext" json:"verse"`
+	Reference    string     `xml:"Losungsvers" json:"reference"`
+	Teaching     string     `xml:"Lehrtext" json:"teaching"`
+	TeachingRef  string     `xml:"Lehrtextvers" json:"teaching_reference"`
+	TermsOfUse   string     `json:"terms_of_use"`
+	Bibliography string     `json:"bibliography"`
 }
 
 // Datatype to be able to unmarshall the time format
