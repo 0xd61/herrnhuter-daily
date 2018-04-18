@@ -6,6 +6,8 @@ import (
 
 const port = 3333
 
+var version = ""
+
 func main() {
 
 	// Echo instance
