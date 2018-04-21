@@ -11,7 +11,11 @@ LABEL Maintainer=daniel.glinka@daimler.com
 LABEL OWNER=DGLINKA
 ARG VERSION=latest
 COPY --from=build /go/src/github.com/Kaitsh/herrnhuter-daily/server-docker-v$VERSION /run/server
+COPY --from=build /go/src/github.com/Kaitsh/herrnhuter-daily/public /run/public
+COPY --from=build /go/src/github.com/Kaitsh/herrnhuter-daily/assets /run/assets
 WORKDIR /run
+
+EXPOSE 3333
 
 CMD [ "./server" ]
 

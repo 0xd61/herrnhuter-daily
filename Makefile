@@ -34,7 +34,6 @@ endif
 
 .PHONY: bin
 bin: dep
-	mkdir -p build
-	GOOS=$(OS) GOARCH=$(ARCH) CGO_ENABLED=0 go build -v -ldflags "-X main.version=$(VERSION)" -a -installsuffix cgo -o build/$(BINARY)-$(OS)-$(ARCH)-v$(VERSION) github.com/Kaitsh/herrnhuter-daily
+	GOOS=$(OS) GOARCH=$(ARCH) CGO_ENABLED=0 go build -v -ldflags "-X main.version=$(VERSION)" -installsuffix cgo -o $(BINARY)-$(OS)-$(ARCH)-v$(VERSION) github.com/Kaitsh/herrnhuter-daily
 
 .DEFAULT_GOAL := bin
