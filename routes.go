@@ -10,5 +10,5 @@ func Routes(server *echo.Echo) {
 	server.GET("/v/:yyyy", Year)
 	server.GET("/v/:yyyy/:mm", Month)
 	server.GET("/v/:yyyy/:mm/:dd", Day)
-	server.GET("/v/", Today)
+	server.GET("/v", Today)
 }
