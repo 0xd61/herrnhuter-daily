@@ -1622,7 +1622,8 @@
 	}
 
 	body {
-		background: #312450;
+		background: #232951;
+		overflow-x: hidden;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -2579,7 +2580,7 @@
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: #2d80b7;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
@@ -3249,31 +3250,31 @@
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #2882d6;
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: #1e578c;
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #1e578c;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #6d9cad;
 		}
 
 		.wrapper.style2-alt {
-			background-color: #3e4094;
+			background-color: #1b3854;
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #2d80b7;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #6da6db;
 		}
 
 		.wrapper.fullscreen {
@@ -3380,7 +3381,7 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: #1e578c;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3534,7 +3535,7 @@
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		background: #232951;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3771,14 +3772,14 @@
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background: #3d3452;
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #1e578c, #4ab0ba);
+				background-image: -webkit-linear-gradient(to right, #1e578c, #4ab0ba);
+				background-image: -ms-linear-gradient(to right, #1e578c, #4ab0ba);
+            background-image: linear-gradient(to right, #1e578c, #4ab0ba);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3867,7 +3868,7 @@
 
 						#sidebar nav a:after {
 							background-image: none;
-							background-color: #b74e91;
+							background-color: #897ba9;
 						}
 
 		}
