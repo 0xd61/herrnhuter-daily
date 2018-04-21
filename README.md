@@ -29,10 +29,10 @@ Ex.:
 The currently available routes are:
 
 - General Information and Documentation: `/`
-- Verse of the Day: `/api/today`
-- All Verses of a Specific Year: `/api/yyyy`
-- All Verses of a Specific Month: `/api/yyyy/mm`
-- Verse of a Specific Date: `/api/yyyy/mm/dd`
+- Verse of the Day: `/v`
+- All Verses of a Specific Year: `/v/yyyy`
+- All Verses of a Specific Month: `/v/yyyy/mm`
+- Verse of a Specific Date: `/v/yyyy/mm/dd`
 
 ## Config
 Currently there is no config available. To change settings please change them directly in code. The port is a global variable in the main.go file. Routes can be adjusted in the routes.go file.
